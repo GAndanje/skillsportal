@@ -51,6 +51,8 @@ npm run dev
 ```
 
 ### 7.  Authentication
+The server will be listening at port http://localhost:8000
 For testing purposes, you can use the following credentials to log in: 
     **Email**: gilbertandanje@gmail.com 
     **Password**: 3A8!56kt#sQgYwa
+
