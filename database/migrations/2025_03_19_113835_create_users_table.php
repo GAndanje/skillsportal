@@ -19,6 +19,17 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            // Additional Fields
+            $table->string('indexNumber')->nullable();
+            $table->string('currentLocation')->nullable();
+            $table->string('highestLevelOfEducation')->nullable();
+            $table->string('availabilityForRemoteWork')->nullable();
+            $table->string('softwareExpertise')->nullable();
+            $table->string('softwareExpertiseLevel')->nullable();
+            $table->string('levelOfResponsibility')->nullable();
+            $table->string('language')->nullable();
+            $table->string('dutyStation')->nullable();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
