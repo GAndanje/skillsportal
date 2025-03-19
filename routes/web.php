@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\User;
+use App\Http\Controllers\Users\DeleteUserController;
 
 Route::get('/', function () {
     return Inertia::render('welcome');
@@ -15,6 +16,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ]);
     })->name('dashboard');
 });
+Route::delete('/users/{id}', [DeleteUserController::class, 'destroy']);
+
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';

@@ -23,7 +23,7 @@ const footerNavItems: NavItem[] = [
     },
     {
         title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits',
+        href: 'https://https://github.com/GAndanje/skillsportal/#readme/starter-kits',
         icon: BookOpen,
     },
 ];
