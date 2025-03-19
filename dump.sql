@@ -36,7 +36,6 @@ CREATE TABLE `cache` (
 
 LOCK TABLES `cache` WRITE;
 /*!40000 ALTER TABLE `cache` DISABLE KEYS */;
-INSERT INTO `cache` VALUES ('laravel_cache_gandanje@safaricom.co.ke|127.0.0.1','i:1;',1742378759),('laravel_cache_gandanje@safaricom.co.ke|127.0.0.1:timer','i:1742378759;',1742378759);
 /*!40000 ALTER TABLE `cache` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,7 +173,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1),(2,'0001_01_01_000001_create_cache_table',1),(3,'0001_01_01_000002_create_jobs_table',1);
+INSERT INTO `migrations` VALUES (1,'0001_01_01_000001_create_cache_table',1),(2,'0001_01_01_000002_create_jobs_table',1),(3,'2025_03_19_113835_create_users_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -228,7 +227,7 @@ CREATE TABLE `sessions` (
 
 LOCK TABLES `sessions` WRITE;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-INSERT INTO `sessions` VALUES ('GGj9poeNwwTRb3fOg2tvQhnTYdhXgtLU3UClgmlp',1,'127.0.0.1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiYmVXUjdURXFyUnF3ZGRuOHNNMHRFVjNEeHp3ZXIzN2ZNdW5MZGNTViI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9yZWdpc3RlciI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==',1742378750);
+INSERT INTO `sessions` VALUES ('3OywQgrCDHYuVVj2qFgGjdAYFuoBiSPNsOYDwUR2',2,'127.0.0.1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoicVU5RzhrNmdLcGRSTTJha3d6VWYxMnpldUo4bHpZR0VxUEtyZ2ZyVyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjtzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozMToiaHR0cDovL2xvY2FsaG9zdDo4MDAwL2Rhc2hib2FyZCI7fX0=',1742387089);
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,9 +247,18 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `indexNumber` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `currentLocation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `highestLevelOfEducation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `availabilityForRemoteWork` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `softwareExpertise` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `softwareExpertiseLevel` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `levelOfResponsibility` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `language` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dutyStation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -259,7 +267,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Gilbert Andanje','gilbertandanje@gmail.com',NULL,'$2y$12$skGy0GGh5Saos957LniKq.hUr1ARz2niCMIPzAtUmLlLRE6GsHTVq',NULL,'2025-03-19 07:05:50','2025-03-19 07:05:50');
+INSERT INTO `users` VALUES (1,'Gilbert Andanje','gilbert@jipamba.com',NULL,'$2y$12$x1rhsuSakAvg7/JZRUPBAOyXEddSGLldTErLHzBjr/nGw6bY0ehTm',NULL,'2025-03-19 09:22:06','2025-03-19 09:22:06','234567','Nairobi','Degree','Yes','Microservices','Professional','N/A','English','Nairobi'),(2,'Yaen Jay','yaen@outlook.com',NULL,'$2y$12$xAc5wEPoMcGHZR5W82CoA.W8jFldXnFr2GsPJ7IaAGIFqLueJUI5K',NULL,'2025-03-19 09:24:09','2025-03-19 09:24:09','66543','Mombasa','Masters','No','UI/UX','Professional','N/A','French','Geneva');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -272,4 +280,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-19 13:10:42
+-- Dump completed on 2025-03-19 15:25:22
