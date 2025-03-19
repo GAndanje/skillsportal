@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\User;
 
 Route::get('/', function () {
     return Inertia::render('welcome');
@@ -9,7 +10,9 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
+        return Inertia::render('dashboard',[
+            'users' => User::all(),
+        ]);
     })->name('dashboard');
 });
 
